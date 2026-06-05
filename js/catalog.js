@@ -4,9 +4,9 @@
 
 const products = [
     {
-        name: "City Rider",
+        name: "BOOSTER NAIK",
         desc: "Лёгкий и манёвренный для города",
-        price: "₽25 000",
+        price: "₽79 000",
         image: "images/bike1.jpg"
     },
     {
