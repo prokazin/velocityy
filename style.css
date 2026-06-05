@@ -5,36 +5,334 @@
 }
 
 body {
-    font-family: system-ui, 'Segoe UI', sans-serif;
+    font-family: system-ui, 'Segoe UI', 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    min-height: 100vh;
+    color: #fff;
     line-height: 1.5;
 }
 
+/* Header Glass */
 header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background: #111;
-    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    flex-wrap: wrap;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
     letter-spacing: 2px;
+    background: linear-gradient(135deg, #fff, #a0a0ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 nav a {
-    color: white;
+    color: #fff;
     text-decoration: none;
     margin-left: 2rem;
     transition: 0.3s;
+    font-weight: 500;
 }
 
 nav a:hover {
-    color: #f4a261;
+    color: #a0a0ff;
+    text-shadow: 0 0 8px rgba(160,160,255,0.5);
 }
 
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* Hero Glass */
+.hero {
+    height: 80vh;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    margin: 1rem;
+    border-radius: 32px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    letter-spacing: 4px;
+    background: linear-gradient(135deg, #fff, #c0c0ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    opacity: 0.9;
+}
+
+.btn {
+    margin-top: 2rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: rgba(160, 160, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: scale(1.05);
+}
+
+/* Catalog Section */
+.catalog {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.catalog h2, .about h2, .contacts h2 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, #fff, #d0d0ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.bike-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Glass card */
+.bike-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.bike-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.bike-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 1rem;
+}
+
+.bike-card h3 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.bike-card p {
+    opacity: 0.8;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.price {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #a0a0ff;
+    margin: 0.5rem 0;
+}
+
+.order-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+    margin-top: 0.5rem;
+    backdrop-filter: blur(4px);
+}
+
+.order-btn:hover {
+    background: rgba(160, 160, 255, 0.5);
+    transform: scale(1.02);
+}
+
+/* About & Contacts Glass */
+.about, .contacts {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    margin: 2rem 1rem;
+    padding: 3rem 2rem;
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.contacts-info p {
+    margin: 0.8rem 0;
+    font-size: 1.1rem;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===== АДАПТИВ ===== */
+/* Планшеты */
+@media (max-width: 1024px) {
+    header {
+        padding: 1rem 1.5rem;
+    }
+    
+    .bike-grid {
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+}
+
+/* Телефоны */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+    
+    nav.show {
+        display: flex;
+    }
+    
+    nav a {
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+        text-align: center;
+    }
+    
+    .hero {
+        margin: 0.5rem;
+        min-height: 400px;
+    }
+    
+    .catalog {
+        padding: 2rem 1rem;
+    }
+    
+    .bike-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+    
+    .about, .contacts {
+        margin: 1rem 0.5rem;
+        padding: 2rem 1rem;
+    }
+    
+    .contacts-info p {
+        font-size: 1rem;
+        word-break: break-word;
+    }
+}
+
+/* Маленькие телефоны */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .hero h1 {
+        letter-spacing: 2px;
+    }
+    
+    .btn {
+        padding: 0.6rem 1.5rem;
+    }
+    
+    .bike-card {
+        padding: 1rem;
+    }
+    
+    .bike-card h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Ноутбуки и десктопы (базово уже адаптировано) */
+@media (min-width: 1200px) {
+    .bike-grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1400px;
+    }
+    
+    .hero {
+        max-width: 1400px;
+        margin: 1rem auto;
+    }
+    
+    .catalog {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
 .hero {
     height: 80vh;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-bike.jpg');
