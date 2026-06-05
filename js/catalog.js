@@ -10,9 +10,9 @@ const products = [
         image: "images/bike1.jpg"
     },
     {
-        name: "Mountain Pro",
+        name: "BOOSTER OXYGEN",
         desc: "Для бездорожья и приключений",
-        price: "₽45 000",
+        price: "₽79 000",
         image: "images/bike2.jpg"
     },
     {
