@@ -7,11 +7,18 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Видео фон -->
+    <video class="video-bg" autoplay muted loop playsinline>
+        <source src="video/bg.mp4" type="video/mp4">
+        <!-- fallback если видео не загрузилось -->
+    </video>
+    <div class="overlay"></div>
+
     <header>
         <div class="logo">VELO CITY</div>
         <nav>
-            <a href="#catalog">Каталог</a>
-            <a href="#about">О нас</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="about.html">О нас</a>
             <a href="#contacts">Контакты</a>
         </nav>
         <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
@@ -20,21 +27,6 @@
     <section class="hero">
         <h1>VELO CITY</h1>
         <p>Велосипеды для города и приключений</p>
-        <a href="#catalog" class="btn">Выбрать велосипед</a>
-    </section>
-
-    <section id="catalog" class="catalog">
-        <h2>Наш каталог</h2>
-        <div class="bike-grid" id="bikeGrid">
-            <!-- Товары будут загружены из JavaScript -->
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <h2>О нас</h2>
-        <div class="about-content">
-            <p>VELO CITY — это больше чем магазин велосипедов. Мы команда энтузиастов, которая любит двухколёсный транспорт и хочет сделать городские поездки комфортными для каждого. У нас вы найдёте велосипеды на любой вкус и кошелёк, а наши мастера всегда помогут с выбором и обслуживанием.</p>
-        </div>
     </section>
 
     <section id="contacts" class="contacts">
