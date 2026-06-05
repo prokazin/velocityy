@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>О нас | VELO CITY</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <video class="video-bg" autoplay muted loop playsinline>
+        <source src="video/bg.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+
+    <header>
+        <div class="logo">VELO CITY</div>
+        <nav>
+            <a href="catalog.html">Каталог</a>
+            <a href="about.html">О нас</a>
+            <a href="index.html#contacts">Контакты</a>
+        </nav>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </header>
+
+    <section class="about-page">
+        <h2>О нас</h2>
+        <div class="about-content">
+            <p>VELO CITY — это больше чем магазин велосипедов. Мы команда энтузиастов, которая любит двухколёсный транспорт и хочет сделать городские поездки комфортными для каждого.</p>
+            <p>У нас вы найдёте велосипеды на любой вкус и кошелёк, а наши мастера всегда помогут с выбором и обслуживанием.</p>
+            <p>Мы работаем с 2015 года и за это время помогли более 10 000 клиентов найти свой идеальный велосипед.</p>
+            <p>В нашем ассортименте — городские, горные, шоссейные и электровелосипеды от лучших производителей.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 VELO CITY. Все права защищены.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
