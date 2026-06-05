@@ -29,12 +29,32 @@ const products = [
     }
 ];
 
-// ===== НЕ РЕДАКТИРОВАТЬ НИЖЕ (РАБОТАЕТ АВТОМАТИЧЕСКИ) =====
 // Функция отрисовки всех товаров
 function renderProducts() {
     const grid = document.getElementById('bikeGrid');
     if (!grid) return;
     
+    grid.innerHTML = '';
+    
+    products.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'bike-card';
+        
+        card.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/300x200?text=No+Image'">
+            <h3>${product.name}</h3>
+            <p>${product.desc}</p>
+            <span class="price">${product.price}</span>
+        `;
+        
+        grid.appendChild(card);
+    });
+}
+
+// Запуск
+document.addEventListener('DOMContentLoaded', () => {
+    renderProducts();
+});    
     grid.innerHTML = '';
     
     products.forEach(product => {
