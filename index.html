@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>VELO CITY | Магазин велосипедов</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -14,6 +14,7 @@
             <a href="#about">О нас</a>
             <a href="#contacts">Контакты</a>
         </nav>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
     </header>
 
     <section class="hero">
@@ -24,15 +25,25 @@
 
     <section id="catalog" class="catalog">
         <h2>Наш каталог</h2>
-        <div class="bike-grid">
-            <div class="bike-card">
-                <img src="images/bike1.jpg" alt="Городской велосипед">
-                <h3>City Rider</h3>
-                <p>Лёгкий и манёвренный для города</p>
-                <span class="price">₽25 000</span>
-                <button class="order-btn">Заказать</button>
-            </div>
-            <!-- Добавьте ещё 3-4 карточки -->
+        <div class="bike-grid" id="bikeGrid">
+            <!-- Товары будут загружены из JavaScript -->
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>О нас</h2>
+        <div class="about-content">
+            <p>VELO CITY — это больше чем магазин велосипедов. Мы команда энтузиастов, которая любит двухколёсный транспорт и хочет сделать городские поездки комфортными для каждого. У нас вы найдёте велосипеды на любой вкус и кошелёк, а наши мастера всегда помогут с выбором и обслуживанием.</p>
+        </div>
+    </section>
+
+    <section id="contacts" class="contacts">
+        <h2>Контакты</h2>
+        <div class="contacts-info">
+            <p>📍 г. Москва, ул. Велосипедная, 15</p>
+            <p>📞 +7 (495) 123-45-67</p>
+            <p>✉️ info@velocity.ru</p>
+            <p>🕒 Ежедневно с 10:00 до 21:00</p>
         </div>
     </section>
 
