@@ -5,14 +5,35 @@
 }
 
 body {
-    font-family: system-ui, 'Segoe UI', 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    font-family: system-ui, 'Segoe UI', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
     min-height: 100vh;
     color: #fff;
     line-height: 1.5;
 }
 
-/* Header Glass */
+/* Видео фон */
+.video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    z-index: -1;
+}
+
+/* Header - iOS стиль */
 header {
     position: sticky;
     top: 0;
@@ -21,17 +42,23 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     flex-wrap: wrap;
 }
 
+@supports (backdrop-filter: blur(20px)) {
+    header {
+        background: rgba(255, 255, 255, 0.15);
+    }
+}
+
 .logo {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 2px;
-    background: linear-gradient(135deg, #fff, #a0a0ff);
+    background: linear-gradient(135deg, #fff, #c0c0ff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -43,6 +70,7 @@ nav a {
     margin-left: 2rem;
     transition: 0.3s;
     font-weight: 500;
+    font-size: 1rem;
 }
 
 nav a:hover {
@@ -59,7 +87,7 @@ nav a:hover {
     cursor: pointer;
 }
 
-/* Hero Glass */
+/* Hero - iOS стиль */
 .hero {
     height: 80vh;
     min-height: 500px;
@@ -68,23 +96,24 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
     margin: 1rem;
-    border-radius: 32px;
+    border-radius: 48px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 2rem;
 }
 
 .hero h1 {
     font-size: clamp(2.5rem, 8vw, 5rem);
     letter-spacing: 4px;
-    background: linear-gradient(135deg, #fff, #c0c0ff);
+    background: linear-gradient(135deg, #fff, #d0d0ff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 .hero p {
@@ -92,130 +121,88 @@ nav a:hover {
     opacity: 0.9;
 }
 
-.btn {
-    margin-top: 2rem;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(8px);
-    color: #fff;
-    padding: 0.8rem 2rem;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 50px;
-    transition: 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    cursor: pointer;
-    display: inline-block;
-}
-
-.btn:hover {
-    background: rgba(160, 160, 255, 0.4);
-    border-color: rgba(255, 255, 255, 0.6);
-    transform: scale(1.05);
-}
-
-/* Catalog Section */
-.catalog {
+/* Каталог страница */
+.catalog-page {
     padding: 4rem 2rem;
     text-align: center;
+    min-height: 70vh;
 }
 
-.catalog h2, .about h2, .contacts h2 {
+.catalog-page h2, .about-page h2, .contacts h2 {
     font-size: clamp(1.8rem, 5vw, 2.5rem);
     margin-bottom: 2rem;
     background: linear-gradient(135deg, #fff, #d0d0ff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    font-weight: 600;
 }
 
 .bike-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     max-width: 1400px;
     margin: 0 auto;
 }
 
-/* Glass card */
+/* Карточки товаров - iOS стиль glass */
 .bike-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(12px);
-    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border-radius: 32px;
     padding: 1.5rem;
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .bike-card:hover {
-    transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .bike-card img {
     width: 100%;
-    height: 200px;
+    height: 220px;
     object-fit: cover;
-    border-radius: 16px;
+    border-radius: 24px;
     margin-bottom: 1rem;
 }
 
 .bike-card h3 {
     font-size: 1.5rem;
     margin: 0.5rem 0;
+    font-weight: 600;
 }
 
 .bike-card p {
-    opacity: 0.8;
-    font-size: 0.9rem;
+    opacity: 0.85;
+    font-size: 0.95rem;
     margin: 0.5rem 0;
+    line-height: 1.4;
 }
 
 .price {
     display: inline-block;
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #a0a0ff;
-    margin: 0.5rem 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #c0c0ff;
+    margin: 0.8rem 0 0 0;
+    letter-spacing: 0.5px;
 }
 
-.order-btn {
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white;
-    padding: 0.6rem 1.5rem;
-    border-radius: 40px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: 0.3s;
-    width: 100%;
-    margin-top: 0.5rem;
-    backdrop-filter: blur(4px);
-}
-
-.order-btn:hover {
-    background: rgba(160, 160, 255, 0.5);
-    transform: scale(1.02);
-}
-
-/* About & Contacts Glass */
-.about, .contacts {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(8px);
-    margin: 2rem 1rem;
+/* Контакты - iOS стиль */
+.contacts {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    margin: 1rem;
     padding: 3rem 2rem;
-    border-radius: 32px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 48px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
     text-align: center;
-}
-
-.about-content {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-    line-height: 1.6;
 }
 
 .contacts-info p {
@@ -223,9 +210,33 @@ nav a:hover {
     font-size: 1.1rem;
 }
 
+/* О нас страница */
+.about-page {
+    padding: 4rem 2rem;
+    text-align: center;
+    min-height: 70vh;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 48px;
+    padding: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.about-content p {
+    margin: 1.5rem 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
 footer {
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
     text-align: center;
     padding: 2rem;
     margin-top: 3rem;
@@ -233,7 +244,6 @@ footer {
 }
 
 /* ===== АДАПТИВ ===== */
-/* Планшеты */
 @media (max-width: 1024px) {
     header {
         padding: 1rem 1.5rem;
@@ -245,7 +255,6 @@ footer {
     }
 }
 
-/* Телефоны */
 @media (max-width: 768px) {
     .mobile-menu-btn {
         display: block;
@@ -256,6 +265,10 @@ footer {
         width: 100%;
         flex-direction: column;
         margin-top: 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border-radius: 24px;
+        padding: 1rem;
     }
     
     nav.show {
@@ -264,16 +277,22 @@ footer {
     
     nav a {
         margin: 0.5rem 0;
-        padding: 0.5rem;
+        padding: 0.75rem;
         text-align: center;
+        border-radius: 16px;
+    }
+    
+    nav a:hover {
+        background: rgba(255, 255, 255, 0.1);
     }
     
     .hero {
         margin: 0.5rem;
         min-height: 400px;
+        border-radius: 32px;
     }
     
-    .catalog {
+    .catalog-page {
         padding: 2rem 1rem;
     }
     
@@ -282,9 +301,23 @@ footer {
         gap: 1.2rem;
     }
     
-    .about, .contacts {
-        margin: 1rem 0.5rem;
+    .contacts {
+        margin: 0.5rem;
         padding: 2rem 1rem;
+        border-radius: 32px;
+    }
+    
+    .about-page {
+        padding: 2rem 1rem;
+    }
+    
+    .about-content {
+        padding: 1.5rem;
+        border-radius: 32px;
+    }
+    
+    .about-content p {
+        font-size: 1rem;
     }
     
     .contacts-info p {
@@ -293,7 +326,6 @@ footer {
     }
 }
 
-/* Маленькие телефоны */
 @media (max-width: 480px) {
     .logo {
         font-size: 1.2rem;
@@ -303,10 +335,6 @@ footer {
         letter-spacing: 2px;
     }
     
-    .btn {
-        padding: 0.6rem 1.5rem;
-    }
-    
     .bike-card {
         padding: 1rem;
     }
@@ -314,9 +342,16 @@ footer {
     .bike-card h3 {
         font-size: 1.2rem;
     }
+    
+    .price {
+        font-size: 1.2rem;
+    }
+    
+    .bike-card img {
+        height: 180px;
+    }
 }
 
-/* Ноутбуки и десктопы (базово уже адаптировано) */
 @media (min-width: 1200px) {
     .bike-grid {
         grid-template-columns: repeat(4, 1fr);
@@ -328,87 +363,13 @@ footer {
         margin: 1rem auto;
     }
     
-    .catalog {
+    .contacts {
+        max-width: 1400px;
+        margin: 1rem auto;
+    }
+    
+    .catalog-page {
         max-width: 1400px;
         margin: 0 auto;
     }
-}
-.hero {
-    height: 80vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-bike.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 4rem;
-    letter-spacing: 4px;
-}
-
-.btn {
-    margin-top: 2rem;
-    background: #f4a261;
-    color: #111;
-    padding: 0.8rem 2rem;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 30px;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #e76f51;
-}
-
-.catalog {
-    padding: 4rem 2rem;
-    text-align: center;
-}
-
-.bike-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.bike-card {
-    border: 1px solid #ddd;
-    border-radius: 16px;
-    padding: 1rem;
-    transition: 0.2s;
-}
-
-.bike-card img {
-    width: 100%;
-    border-radius: 12px;
-}
-
-.order-btn {
-    background: #111;
-    color: white;
-    border: none;
-    padding: 0.5rem 1.5rem;
-    border-radius: 30px;
-    margin-top: 1rem;
-    cursor: pointer;
-}
-
-footer {
-    background: #111;
-    color: #ccc;
-    text-align: center;
-    padding: 2rem;
-}
-
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
-    header { flex-direction: column; gap: 1rem; }
-    nav a { margin: 0 1rem; }
 }
