@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Админ панель | VELO CITY</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="video-bg-fallback"></div>
+
+    <header>
+        <div class="logo">VELO CITY | Админ панель</div>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="about.html">О нас</a>
+        </nav>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </header>
+
+    <main>
+        <section class="admin-panel">
+            <h2>Управление товарами</h2>
+            
+            <!-- Форма входа -->
+            <div id="loginForm" class="admin-login">
+                <h3>Вход для администратора</h3>
+                <input type="password" id="adminPassword" placeholder="Введите пароль">
+                <button id="loginBtn" class="btn">Войти</button>
+                <p id="loginError" class="error-msg"></p>
+            </div>
+
+            <!-- Панель управления (скрыта по умолчанию) -->
+            <div id="adminControls" style="display: none;">
+                <div class="add-product-form">
+                    <h3>Добавить новый товар</h3>
+                    <input type="text" id="productName" placeholder="Название велосипеда">
+                    <textarea id="productDesc" placeholder="Описание" rows="3"></textarea>
+                    <input type="text" id="productPrice" placeholder="Цена (например: ₽25 000)">
+                    <input type="text" id="productImage" placeholder="Путь к фото (например: images/bike6.jpg)">
+                    <button id="addProductBtn" class="btn">➕ Добавить товар</button>
+                </div>
+
+                <div class="products-list">
+                    <h3>Существующие товары</h3>
+                    <div id="productsAdminList"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-social">
+            <a href="https://t.me/velocity" class="social-link" target="_blank">🚲 Telegram</a>
+            <a href="https://instagram.com/velocity" class="social-link" target="_blank">📸 Instagram</a>
+            <a href="tel:+74951234567" class="social-link call-link">📞 Позвонить</a>
+        </div>
+        <p>&copy; 2025 VELO CITY. Все права защищены.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
