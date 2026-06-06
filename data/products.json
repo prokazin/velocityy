@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "City Rider",
+        "desc": "Лёгкий и манёвренный для города",
+        "price": "₽25 000",
+        "image": "images/bike1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Mountain Pro",
+        "desc": "Для бездорожья и приключений",
+        "price": "₽45 000",
+        "image": "images/bike2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Electro Move",
+        "desc": "Электровелосипед с запасом хода 80км",
+        "price": "₽89 000",
+        "image": "images/bike3.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Speed Racer",
+        "desc": "Шоссейный велосипед для скорости",
+        "price": "₽67 000",
+        "image": "images/bike4.jpg"
+    }
+]
